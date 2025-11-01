@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: default
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,refresh
+  endpoint:
+    health:
+      show-details: always
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    root: INFO
+    com.banking: DEBUG
+
+# Fallback configuration for all services
+server:
+  error:
+    include-message: always
